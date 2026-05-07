@@ -361,6 +361,7 @@ emailjs.send(
   "template_c1tjidh",
   {
     email: e.target.email.value,
+    name: "MediZap User"
   },
   "rT5l30wKW_zmITwT4"
 );
