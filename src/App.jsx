@@ -5,6 +5,7 @@ import "./App.css";
 export default function App() {
   const [showResult, setShowResult] = useState(false);
   const [showWaitlist, setShowWaitlist] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const canvasRef = useRef(null);
 
   const handleCheck = () => {
@@ -364,10 +365,20 @@ emailjs.send(
     name: "MediZap User"
   },
   "rT5l30wKW_zmITwT4"
-);
+)
 
-alert("Joined Waitlist Successfully 🚀");
-setShowWaitlist(false);
+.then(() => {
+  setShowSuccess(true);
+  setShowWaitlist(false);
+
+  setTimeout(() => {
+    setShowSuccess(false);
+  }, 3000);
+})
+
+.catch(() => {
+  alert("Something went wrong");
+});
 }}
 >
 
@@ -411,7 +422,74 @@ setShowWaitlist(false);
 </div>
 
 )}
-</div>
 
+  {showSuccess && (
+    <div className="success-popup">
+      <div className="success-icon">✓</div>
+
+      <h3>You're on the Waitlist!</h3>
+
+      <p>
+        Thank you for joining MediZap.
+        We’ll notify you when we launch in your area.
+      </p>
+    </div>
+  )}
+
+<section className="launch-section">
+
+  <div className="launch-left">
+
+    <div className="launch-icon">📍</div>
+
+    <h2>
+      Starting Small, Dreaming Big
+    </h2>
+
+    <p className="launch-text">
+      We’re launching in <span>Bangalore</span>, one pincode at a time.
+      Our hyper-local approach ensures we perfect the 10-minute
+      delivery promise before expanding.
+    </p>
+
+    <div className="launch-points">
+
+      <div className="launch-point">
+        <span>✓</span>
+        <p>One pincode at a time for quality</p>
+      </div>
+
+      <div className="launch-point">
+        <span>✓</span>
+        <p>Bangalore launch - Q2 2026</p>
+      </div>
+
+      <div className="launch-point">
+        <span>✓</span>
+        <p>More cities coming soon</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div className="launch-right">
+
+    <div className="city-circle">
+
+      <div className="pulse-ring"></div>
+
+      <div className="city-inner">
+        <div className="city-icon">📍</div>
+        <h3>Bangalore</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</div>
 );
 }
+
