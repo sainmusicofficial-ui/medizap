@@ -574,3 +574,339 @@ padding: 36px;
 
   max-width: 560px;
 }
+
+/* ================= BENEFITS SECTION ================= */
+
+.benefits-section {
+  padding: 140px 0;
+  text-align: center;
+}
+
+.benefits-section h2 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #b8f3ff,
+    #22d3ee
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 22px;
+}
+
+.benefits-section .subtitle {
+  color: rgba(255,255,255,0.55);
+  font-size: 20px;
+
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-bottom: 90px;
+  position: relative;
+}
+
+.benefits-section .subtitle::after {
+  content: "";
+
+  width: 70px;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #22d3ee,
+    transparent
+  );
+
+  display: block;
+  margin: 22px auto 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+.benefit-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  min-height: 420px;
+
+  padding: 42px;
+
+  border-radius: 28px;
+
+  text-align: left;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(14px);
+
+  transition: all 0.35s ease;
+}
+
+.benefit-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(34,211,238,0.18),
+    transparent 70%
+  );
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+
+  z-index: -1;
+}
+
+.benefit-card:hover::before {
+  opacity: 1;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+
+  border: 1px solid rgba(34,211,238,0.45);
+
+  box-shadow:
+    0 0 25px rgba(34,211,238,0.18),
+    0 0 60px rgba(34,211,238,0.08);
+}
+
+.benefit-card .icon {
+  width: 82px;
+  height: 82px;
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 36px;
+
+  background: rgba(34,211,238,0.08);
+
+  border: 1px solid rgba(34,211,238,0.16);
+
+  margin-bottom: 42px;
+}
+
+.benefit-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+
+  margin-bottom: 24px;
+
+  color: #ffffff;
+}
+
+.benefit-card p {
+  color: rgba(255,255,255,0.62);
+
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-card {
+    min-height: auto;
+  }
+
+  .benefits-section h2 {
+    font-size: 42px;
+  }
+}
+
+/* =========================
+   WAITLIST MODAL
+========================= */
+
+.waitlist-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.waitlist-modal {
+  position: relative;
+
+  width: 90%;
+  max-width: 700px;
+
+  padding: 50px;
+
+  border-radius: 24px;
+
+  background: rgba(15, 23, 42, 0.95);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 0 40px rgba(34,211,238,0.15);
+
+  animation: popup 0.25s ease;
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.waitlist-modal h2 {
+  text-align: center;
+  margin-bottom: 40px;
+
+  font-size: 42px;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #67e8f9,
+    #22d3ee
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: white;
+}
+
+.form-group input {
+  height: 64px;
+
+  padding: 0 22px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: #041127;
+
+  color: white;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #22d3ee;
+
+  box-shadow:
+    0 0 20px rgba(34,211,238,0.2);
+}
+
+.waitlist-submit {
+  margin-top: 10px;
+
+  height: 68px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #22d3ee;
+
+  color: black;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.waitlist-submit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 30px rgba(34,211,238,0.35);
+}
+
+.close-btn {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(255,255,255,0.08);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 18px;
+}

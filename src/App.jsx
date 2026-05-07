@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import "./App.css";
 
 export default function App() {
   const [showResult, setShowResult] = useState(false);
+  const [showWaitlist, setShowWaitlist] = useState(false);
   const canvasRef = useRef(null);
 
   const handleCheck = () => {
@@ -111,9 +113,12 @@ export default function App() {
         </div>
 
         <div className="nav-right">
-          <button className="btn-primary">
-            Join Waitlist →
-          </button>
+          <button
+  className="btn-primary"
+  onClick={() => setShowWaitlist(true)}
+>
+  Join Waitlist →
+</button>
         </div>
       </header>
 
@@ -260,6 +265,147 @@ export default function App() {
         </div>
       </section>
 
+      <section className="benefits-section">
+
+  <h2>Why Timely Medicine Delivery Matters</h2>
+
+  <p className="subtitle">
+    Research-backed benefits of immediate medication access
+  </p>
+
+  <div className="benefits-grid">
+
+    {/* CARD 1 */}
+    <div className="benefit-card">
+      <div className="icon">⚡</div>
+
+      <h3>Emergency Response</h3>
+
+      <p>
+        For conditions like heart attacks, asthma attacks,
+        or severe allergies, immediate medication access can
+        be life-saving. Studies show that timely medication
+        reduces emergency complications by 40%.
+      </p>
     </div>
-  );
+
+    {/* CARD 2 */}
+    <div className="benefit-card">
+      <div className="icon">🛡️</div>
+
+      <h3>Better Adherence</h3>
+
+      <p>
+        17–23% improvement in medication adherence when
+        delivery is convenient. Chronic disease patients
+        maintain consistent treatment schedules, leading to
+        better health outcomes.
+      </p>
+    </div>
+
+    {/* CARD 3 */}
+    <div className="benefit-card">
+      <div className="icon">🕒</div>
+
+      <h3>Save 2+ Hours Weekly</h3>
+
+      <p>
+        Eliminate pharmacy visits, waiting queues, and
+        multiple store trips. Especially valuable for elderly
+        patients, busy professionals, and caregivers managing
+        ongoing treatments.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{/* WAITLIST MODAL */}
+{showWaitlist && (
+  <div
+    className="waitlist-overlay"
+    onClick={() => setShowWaitlist(false)}
+  >
+    <div
+      className="waitlist-modal"
+      onClick={(e) => e.stopPropagation()}
+    >
+
+      <button
+        className="close-btn"
+        onClick={() => setShowWaitlist(false)}
+      >
+        ✕
+      </button>
+
+      <h2>Join the Waitlist</h2>
+
+<form
+  className="waitlist-form"
+  onSubmit={(e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      "service_r7to9nb",
+      "template_vpxm5gi",
+      {
+        email: e.target.email.value,
+        phone: e.target.phone.value,
+        pincode: e.target.pincode.value,
+      },
+      "rT5l30wKW_zmITwT4"
+    )
+    .then(() => {
+      alert("Joined Waitlist Successfully 🚀");
+      setShowWaitlist(false);
+    })
+    .catch(() => {
+      alert("Something went wrong");
+    });
+  }}
+>
+
+  <div className="form-group">
+    <label>EMAIL ADDRESS</label>
+    <input
+      type="email"
+      name="email"
+      placeholder="your.email@example.com"
+      required
+    />
+  </div>
+
+  <div className="form-group">
+    <label>PHONE NUMBER</label>
+    <input
+      type="text"
+      name="phone"
+      placeholder="+91 98765 43210"
+      required
+    />
+  </div>
+
+  <div className="form-group">
+    <label>PINCODE</label>
+    <input
+      type="text"
+      name="pincode"
+      placeholder="560001"
+      required
+    />
+  </div>
+
+  <button type="submit" className="waitlist-submit">
+    Join Waitlist →
+  </button>
+
+</form>
+
+</div>
+</div>
+
+)}
+</div>
+
+);
 }
