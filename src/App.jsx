@@ -346,23 +346,28 @@ export default function App() {
     e.preventDefault();
 
     emailjs.send(
-      "service_r7to9nb",
-      "template_vpxm5gi",
-      {
-        email: e.target.email.value,
-        phone: e.target.phone.value,
-        pincode: e.target.pincode.value,
-      },
-      "rT5l30wKW_zmITwT4"
-    )
-    .then(() => {
-      alert("Joined Waitlist Successfully 🚀");
-      setShowWaitlist(false);
-    })
-    .catch(() => {
-      alert("Something went wrong");
-    });
-  }}
+  "service_r7to9nb",
+  "template_vpxm5gi",
+  {
+    email: e.target.email.value,
+    phone: e.target.phone.value,
+    pincode: e.target.pincode.value,
+  },
+  "rT5l30wKW_zmITwT4"
+);
+
+emailjs.send(
+  "service_r7to9nb",
+  "template_c1tjidh",
+  {
+    email: e.target.email.value,
+  },
+  "rT5l30wKW_zmITwT4"
+);
+
+alert("Joined Waitlist Successfully 🚀");
+setShowWaitlist(false);
+}}
 >
 
   <div className="form-group">
