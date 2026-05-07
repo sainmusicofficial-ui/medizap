@@ -8,95 +8,95 @@ export default function App() {
   const handleCheck = () => {
     const pin = document.getElementById("pincode").value;
     if (!pin) return;
-
     setShowResult(true);
   };
 
-  // 🔥 OLD SPHERE (FIXED + CLEAN)
   useEffect(() => {
-  const canvas = canvasRef.current;
-  if (!canvas) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-  const size = 520;
-  canvas.width = size;
-  canvas.height = size;
+    const size = 520;
+    canvas.width = size;
+    canvas.height = size;
 
-  const particles = [];
-  const count = 1200;
-  const center = size / 2;
-  const radius = size / 2;
+    const particles = [];
+    const count = 1200;
+    const center = size / 2;
+    const radius = size / 2;
 
-  let mouseX = 0;
-  let mouseY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
 
-  const handleMouseMove = (e) => {
-    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-  };
+    const handleMouseMove = (e) => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    };
 
-  window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
-  for (let i = 0; i < count; i++) {
-    const theta = Math.random() * 2 * Math.PI;
-    const phi = Math.acos(2 * Math.random() - 1);
+    for (let i = 0; i < count; i++) {
+      const theta = Math.random() * 2 * Math.PI;
+      const phi = Math.acos(2 * Math.random() - 1);
 
-    const r = radius * 0.9;
+      const r = radius * 0.9;
 
-    particles.push({
-      x: r * Math.sin(phi) * Math.cos(theta),
-      y: r * Math.sin(phi) * Math.sin(theta),
-      z: r * Math.cos(phi),
-      size: Math.random() * 2 + 0.5,
-    });
-  }
+      particles.push({
+        x: r * Math.sin(phi) * Math.cos(theta),
+        y: r * Math.sin(phi) * Math.sin(theta),
+        z: r * Math.cos(phi),
+        size: Math.random() * 2 + 0.5,
+      });
+    }
 
-  let angle = 0;
-  let frameId;
+    let angle = 0;
+    let frameId;
 
-  const animate = () => {
-    ctx.clearRect(0, 0, size, size);
-    angle += 0.002;
+    const animate = () => {
+      ctx.clearRect(0, 0, size, size);
+      angle += 0.002;
 
-    particles.forEach((p) => {
-      const tiltX = mouseY * 0.5;
-      const tiltY = mouseX * 0.5;
+      particles.forEach((p) => {
+        const tiltX = mouseY * 0.5;
+        const tiltY = mouseX * 0.5;
 
-      let x = p.x * Math.cos(angle + tiltY) - p.z * Math.sin(angle + tiltY);
-      let z = p.x * Math.sin(angle + tiltY) + p.z * Math.cos(angle + tiltY);
+        let x = p.x * Math.cos(angle + tiltY) - p.z * Math.sin(angle + tiltY);
+        let z = p.x * Math.sin(angle + tiltY) + p.z * Math.cos(angle + tiltY);
 
-      let y = p.y * Math.cos(tiltX) - z * Math.sin(tiltX);
-      z = p.y * Math.sin(tiltX) + z * Math.cos(tiltX);
+        let y = p.y * Math.cos(tiltX) - z * Math.sin(tiltX);
+        z = p.y * Math.sin(tiltX) + z * Math.cos(tiltX);
 
-      const scale = 600 / (600 + z);
-      const screenX = center + x * scale;
-      const screenY = center + y * scale;
+        const scale = 600 / (600 + z);
+        const screenX = center + x * scale;
+        const screenY = center + y * scale;
 
-      const opacity = (z + radius) / (2 * radius);
+        const opacity = (z + radius) / (2 * radius);
 
-      ctx.beginPath();
-      ctx.arc(screenX, screenY, p.size * scale, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(34,211,238,${opacity})`;
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = "#22d3ee";
-      ctx.fill();
-    });
+        ctx.beginPath();
+        ctx.arc(screenX, screenY, p.size * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(34,211,238,${opacity})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = "#22d3ee";
+        ctx.fill();
+      });
 
-    frameId = requestAnimationFrame(animate);
-  };
+      frameId = requestAnimationFrame(animate);
+    };
 
-  animate();
+    animate();
 
-  return () => {
-    window.removeEventListener("mousemove", handleMouseMove);
-    cancelAnimationFrame(frameId);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(frameId);
+    };
+  }, []);
 
   return (
     <div className="app">
+
+      {/* NAVBAR */}
       <header className="navbar">
         <div className="nav-left">
           <img src="/logo.png" alt="Medizap" />
@@ -111,15 +111,13 @@ export default function App() {
         </div>
 
         <div className="nav-right">
-          <button
-            className="btn-primary"
-            onClick={() => alert("You’ve been added to the waitlist 🚀")}
-          >
+          <button className="btn-primary">
             Join Waitlist →
           </button>
         </div>
       </header>
 
+      {/* HERO */}
       <section className="hero">
         <div className="left">
           <span className="badge">⚡ LIGHTNING FAST DELIVERY</span>
@@ -130,9 +128,7 @@ export default function App() {
           </h1>
 
           <p>
-            We’re building the future of medicine delivery. Join our waitlist to
-            be the first to experience lightning-fast delivery from nearby
-            pharmacies.
+            We’re building the future of medicine delivery. Join our waitlist to be the first to experience lightning-fast delivery from nearby pharmacies.
           </p>
 
           <div className="input-box">
@@ -143,13 +139,9 @@ export default function App() {
           {showResult && (
             <div className="result-card">
               <div className="result-icon">📍</div>
-
               <div>
                 <h3>Coming Soon!</h3>
                 <p>We're launching in Bangalore by Q2 2026</p>
-                <span className="link">
-                  Join Waitlist to Get Notified →
-                </span>
               </div>
             </div>
           )}
@@ -168,8 +160,6 @@ export default function App() {
               <p>AUTHENTIC MEDS</p>
             </div>
           </div>
-
-          <button className="btn-primary">Join Waitlist →</button>
         </div>
 
         <div className="right">
@@ -178,6 +168,98 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* PROBLEM SECTION */}
+      <section className="problem-section">
+        <h2>The Medicine Access Crisis</h2>
+        <p className="subtitle">
+          Every minute matters when health is at stake
+        </p>
+
+        <div className="problem-cards">
+
+          <div className="problem-card">
+            <div className="icon">⏱</div>
+            <h3>32+ Minutes Waiting</h3>
+            <p>
+              Average pharmacy waiting time exceeds 32 minutes, with 60% of visits failing to meet the 30-minute standard.
+            </p>
+            <span>65% of chronic patients prefer home delivery</span>
+          </div>
+
+          <div className="problem-card">
+            <div className="icon">❌</div>
+            <h3>Stock Shortages</h3>
+            <p>
+              Visit multiple pharmacies only to hear "out of stock". Critical medications unavailable when you need them most.
+            </p>
+            <span>40% face medication accessibility issues</span>
+          </div>
+
+          <div className="problem-card">
+            <div className="icon">📍</div>
+            <h3>Urban Congestion</h3>
+            <p>
+              Traffic increases delivery times by 35–50% during peak hours.
+            </p>
+            <span>35–50% longer during rush hours</span>
+          </div>
+
+        </div>
+      </section>
+
+      {/* HOW SECTION */}
+      <section className="how-section">
+        <h2>How MediZap Works</h2>
+        <p className="subtitle">
+          Minutes, not hours. Simple, not complicated.
+        </p>
+
+        <div className="steps">
+
+          <div className="step">
+            <div className="step-number">01</div>
+            <div className="step-content">
+              <h3>Order Instantly</h3>
+              <p>
+                Upload prescription or search medicines. Our system checks real-time inventory across pharmacies.
+              </p>
+            </div>
+          </div>
+
+          <div className="step">
+            <div className="step-number">02</div>
+            <div className="step-content">
+              <h3>Pharmacy Network</h3>
+              <p>
+                Verified pharmacies ensure authentic medicines and fast dispatch.
+              </p>
+            </div>
+          </div>
+
+          <div className="step">
+            <div className="step-number">03</div>
+            <div className="step-content">
+              <h3>10-Minute Delivery</h3>
+              <p>
+                Delivery partners bring medicines within minutes with secure handling.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="trust-card">
+          <div className="icon">🛡️</div>
+          <div>
+            <h3>Trusted Pharmacy Network</h3>
+            <p>
+              Verified pharmacies ensure quality, authenticity, and ultra-fast delivery.
+            </p>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
