@@ -572,6 +572,220 @@ emailjs.send(
 
 </section>
 
+<section className="updates-section">
+
+  <h2 className="updates-title">
+    Latest Updates
+  </h2>
+
+  <p className="updates-subtitle">
+    Follow our journey as we build MediZap
+  </p>
+
+  <div className="updates-grid">
+
+    {/* cards */}
+
+  </div>
+
+</section>
+{/* CARD 1 */}
+<div className="updates-grid">
+
+<div className="update-card">
+
+  <div className="update-image">
+    <img src="/logo.png" alt="MediZap" />
+  </div>
+
+  <div className="update-content">
+
+    <div className="update-meta">
+      <span>March 2026</span>
+      <span>ANNOUNCEMENT</span>
+    </div>
+
+    <h3>MediZap MVP Development Begins</h3>
+
+    <p>
+      We officially began building the MediZap MVP with a focus on
+      ultra-fast medicine delivery, real-time pharmacy inventory,
+      and a seamless customer experience for Bangalore users.
+    </p>
+
+    <div className="update-status">
+      🚧 In Progress
+    </div>
+
+  </div>
+</div>
+
+
+{/* CARD 2 */}
+<div className="update-card">
+
+  <div className="update-image team-placeholder">
+    👥
+  </div>
+
+  <div className="update-content">
+
+    <div className="update-meta">
+      <span>May 2026</span>
+      <span>TEAM</span>
+    </div>
+
+    <h3>Building the Core Team</h3>
+
+    <p>
+      We’re assembling a passionate founding team across operations,
+      logistics, pharmacy partnerships, and technology to prepare
+      MediZap for launch and rapid expansion.
+    </p>
+
+    <div className="update-status">
+      ✅ Hiring & Partnerships Active
+    </div>
+
+  </div>
+</div>
+
+
+{/* CARD 3 */}
+<div className="update-card">
+
+  <div className="update-image launch-placeholder">
+    🚀
+  </div>
+
+  <div className="update-content">
+
+    <div className="update-meta">
+      <span>Q3 2026</span>
+      <span>LAUNCH</span>
+    </div>
+
+    <h3>Bangalore Launch Begins</h3>
+
+    <p>
+      MediZap is preparing for its official Bangalore launch in Q3 2026.
+      We’re onboarding pharmacy partners, optimizing logistics,
+      and testing our 10-minute delivery network.
+    </p>
+
+    <div className="update-status">
+      📅 Launch Scheduled
+    </div>
+    </div>
+
+
+  </div>
+</div>
+
+{/* PARTNER SECTION */}
+
+<section className="partner-section">
+
+  <div className="partner-header">
+
+    <div className="partner-badge">
+      🤝 PARTNER WITH MEDIZAP
+    </div>
+
+    <h2>
+      Grow Your Pharmacy Business
+      <br />
+      with MediZap
+    </h2>
+
+    <p>
+      Join India’s fastest-growing medicine delivery network
+      and reach thousands of nearby customers.
+    </p>
+
+  </div>
+
+  <div className="partner-grid">
+
+    <div className="partner-main-card">
+
+      <div className="partner-feature">
+        <span>🏪</span>
+
+        <div>
+          <h3>Expand Your Reach</h3>
+
+          <p>
+            Get discovered by thousands of nearby customers.
+          </p>
+        </div>
+      </div>
+
+      <div className="partner-feature">
+        <span>⚡</span>
+
+        <div>
+          <h3>Easy Integration</h3>
+
+          <p>
+            Start onboarding within 24 hours.
+          </p>
+        </div>
+      </div>
+
+      <div className="partner-feature">
+        <span>📍</span>
+
+        <div>
+          <h3>Hyper-Local Focus</h3>
+
+          <p>
+            Serve customers in your immediate vicinity.
+          </p>
+        </div>
+      </div>
+
+      <button className="partner-btn">
+        Become a Partner →
+      </button>
+
+    </div>
+
+    <div className="partner-info-card">
+
+      <div className="partner-column">
+
+        <h3>What We Need</h3>
+
+        <ul>
+          <li>✔ Valid pharmacy license</li>
+          <li>✔ GST registration</li>
+          <li>✔ Store location & pincode</li>
+          <li>✔ Medicine inventory details</li>
+          <li>✔ Contact information</li>
+        </ul>
+
+      </div>
+
+      <div className="partner-column">
+
+        <h3>What You Get</h3>
+
+        <ul>
+          <li>✔ Zero joining fee</li>
+          <li>✔ Instant payouts</li>
+          <li>✔ Marketing support</li>
+          <li>✔ Dedicated account manager</li>
+          <li>✔ Technology platform</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 </div>
 );
 }
