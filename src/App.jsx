@@ -786,6 +786,163 @@ emailjs.send(
   </div>
 
 </section>
+
+{/* WAITLIST SECTION */}
+
+<section className="waitlist-section">
+
+  <div className="waitlist-left">
+
+    <h2>
+      Be Among the First
+    </h2>
+
+    <p>
+      Join our exclusive waitlist and get early access to MediZap.
+      Stay tuned for latest updates on our launch.
+      Your health can't wait, and neither should you.
+    </p>
+
+    <div className="waitlist-benefits">
+
+      <div className="benefit-item">
+        <span>✔</span>
+        <p>Early access to the platform</p>
+      </div>
+
+      <div className="benefit-item">
+        <span>✔</span>
+        <p>Exclusive launch offers</p>
+      </div>
+
+      <div className="benefit-item">
+        <span>✔</span>
+        <p>Priority delivery slots</p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div className="waitlist-card">
+
+    <h3>Join the Waitlist</h3>
+
+    <form>
+
+      <div className="input-group">
+        <label>EMAIL ADDRESS</label>
+        <input
+          type="email"
+          placeholder="your.email@example.com"
+        />
+      </div>
+
+      <div className="input-group">
+        <label>PHONE NUMBER</label>
+        <input
+          type="text"
+          placeholder="+91 98765 43210"
+        />
+      </div>
+
+      <div className="input-group">
+        <label>PINCODE</label>
+        <input
+          type="text"
+          placeholder="560001"
+        />
+      </div>
+
+      <button type="submit" className="waitlist-btn">
+        Join Waitlist →
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<section className="footer-section">
+
+  <div className="footer-grid">
+
+    <div className="footer-brand">
+
+      <img src="/logo.png" alt="MediZap" />
+
+      <h3>Because Every Second Counts</h3>
+
+      <p>
+        Revolutionizing medicine delivery in India,
+        one pincode at a time.
+      </p>
+
+    </div>
+
+
+    <div className="footer-column">
+
+      <h4>Quick Links</h4>
+
+      <a href="#">How It Works</a>
+      <a href="#">Features</a>
+      <a href="#">About Us</a>
+      <a href="#">Blog</a>
+      <a href="#">Join Waitlist</a>
+      <a href="#">Partner with Us</a>
+
+    </div>
+
+
+    <div className="footer-column">
+
+      <h4>Contact Us</h4>
+
+      <p>✉ support@medizap.co.in</p>
+      <p>📞 +91 91870 47404</p>
+      <p>📍 Bangalore, Karnataka</p>
+
+    </div>
+
+
+    <div className="footer-column">
+
+      <h4>Stay Updated</h4>
+
+      <p className="footer-update-text">
+        Follow us for the latest updates on our
+        launch and expansion.
+      </p>
+
+      <div className="social-buttons">
+
+        <button>Twitter</button>
+        <button>LinkedIn</button>
+        <button>Instagram</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div className="footer-bottom">
+
+    <p>© 2026 MediZap. All rights reserved.</p>
+
+    <div className="footer-policy-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Refund Policy</a>
+    </div>
+
+  </div>
+
+</section>
 </div>
 );
 }
