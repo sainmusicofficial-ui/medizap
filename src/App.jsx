@@ -489,6 +489,89 @@ emailjs.send(
 
 </section>
 
+{/* ABOUT SECTION */}
+
+<section className="about-section">
+
+  <div className="about-left">
+    <div className="about-image-card">
+      <img
+        src="/medizap-animation.gif.gif"
+        alt="MediZap Animation"
+      />
+    </div>
+  </div>
+
+  <div className="about-right">
+
+    <h2>About MediZap</h2>
+
+    <h3>
+      Revolutionizing Healthcare Access,<br />
+      One Delivery at a Time
+    </h3>
+
+    <p>
+      We’re a passionate team building the future of medicine
+      delivery in India. Currently in our MVP stage, we're
+      working tirelessly to solve a critical problem:
+      the time gap between needing medicine and getting it.
+    </p>
+
+    <p>
+      Every year, millions of Indians waste hours in pharmacy
+      queues, face medication stock-outs, and struggle with
+      delayed access to critical medicines. We believe
+      healthcare should be instant, reliable, and stress-free.
+    </p>
+
+  </div>
+
+</section>
+
+{/* ABOUT CARDS SECTION */}
+
+<section className="about-cards-section">
+
+ <div className="about-mini-card">
+  <span>💡</span>
+
+  <div>
+    <h5>Our Mission</h5>
+
+    <p>
+      To eliminate the anxiety of “Will I get my medicine on time?”
+      by building India’s fastest, most reliable medicine delivery network.
+    </p>
+  </div>
+</div>
+
+  <div className="about-mini-card">
+    <span>🎯</span>
+
+    <div>
+      <h5>Our Goal</h5>
+
+      <p>
+        10-minute delivery across major Indian cities.
+      </p>
+    </div>
+  </div>
+
+  <div className="about-mini-card">
+    <span>🏗️</span>
+
+    <div>
+      <h5>Current Stage</h5>
+
+      <p>
+        Building MVP and onboarding pharmacy partners.
+      </p>
+    </div>
+  </div>
+
+</section>
+
 </div>
 );
 }
