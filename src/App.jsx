@@ -106,11 +106,11 @@ export default function App() {
         </div>
 
         <div className="nav-center">
-          <a>How It Works</a>
-          <a>Features</a>
-          <a>About Us</a>
-          <a>Blog</a>
-          <a>For Partners</a>
+          <a href="#how-it-works">How It Works</a>
+         <a href="#features">Features</a>
+         <a href="#about">About Us</a>
+         <a href="#updates">Blog</a>
+         <a href="#partners">For Partners</a>
         </div>
 
         <div className="nav-right">
@@ -215,7 +215,7 @@ export default function App() {
       </section>
 
       {/* HOW SECTION */}
-      <section className="how-section">
+      <section id="how-it-works" className="how-section">
         <h2>How MediZap Works</h2>
         <p className="subtitle">
           Minutes, not hours. Simple, not complicated.
@@ -266,7 +266,7 @@ export default function App() {
         </div>
       </section>
 
-      <section className="benefits-section">
+      <section id="features" className="benefits-section">
 
   <h2>Why Timely Medicine Delivery Matters</h2>
 
@@ -491,7 +491,7 @@ emailjs.send(
 
 {/* ABOUT SECTION */}
 
-<section className="about-section">
+<section id="about" className="about-section">
 
   <div className="about-left">
     <div className="about-image-card">
@@ -572,7 +572,7 @@ emailjs.send(
 
 </section>
 
-<section className="updates-section">
+<section id="updates" className="updates-section">
 
   <h2 className="updates-title">
     Latest Updates
@@ -684,7 +684,7 @@ emailjs.send(
 
 {/* PARTNER SECTION */}
 
-<section className="partner-section">
+<section id="partners" className="partners-section">
 
   <div className="partner-header">
 
@@ -693,10 +693,10 @@ emailjs.send(
     </div>
 
     <h2>
-      Grow Your Pharmacy Business
-      <br />
-      with MediZap
-    </h2>
+     Grow Your Pharmacy Business
+     <br />
+     with MediZap
+     </h2>
 
     <p>
       Join India’s fastest-growing medicine delivery network
@@ -887,12 +887,11 @@ emailjs.send(
 
       <h4>Quick Links</h4>
 
-      <a href="#">How It Works</a>
-      <a href="#">Features</a>
-      <a href="#">About Us</a>
-      <a href="#">Blog</a>
-      <a href="#">Join Waitlist</a>
-      <a href="#">Partner with Us</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#features">Features</a>
+      <a href="#about">About Us</a>
+      <a href="#updates">Blog</a>
+      <a href="#partners">For Partners</a>
 
     </div>
 

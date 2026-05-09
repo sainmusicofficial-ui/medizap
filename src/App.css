@@ -1421,18 +1421,24 @@ padding: 36px;
 
 .partner-section{
   width: 100%;
-  padding: 120px 60px;
+  padding: 180px 60px 120px;
+  
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  text-align: center;
+
   background: #02111f;
 }
 
 .partner-header{
-  text-align: center;
+  width: 100%;
   max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 60px;
 }
 
 .partner-badge{
@@ -1458,6 +1464,8 @@ padding: 36px;
   font-size: 68px;
   line-height: 1.1;
   font-weight: 800;
+  text-align: center;
+  width: 100%;
 
   margin-bottom: 24px;
 
