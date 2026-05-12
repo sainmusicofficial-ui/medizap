@@ -1909,3 +1909,44 @@ padding: 36px;
 .footer-policy-links a:hover{
   color: #12f7d6;
 }
+
+.policy-page{
+  min-height: 100vh;
+  background: #031525;
+  padding: 0;
+}
+
+.policy-card{
+  width: 90%;
+  max-width: 950px;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 60px;
+  backdrop-filter: blur(12px);
+}
+
+.policy-card h1{
+  font-size: 56px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.updated{
+  color: #7f8b99;
+  margin-bottom: 30px;
+}
+
+.policy-card h2{
+  color: white;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.policy-card p{
+  color: #b8c0cc;
+  line-height: 1.9;
+  font-size: 17px;
+}

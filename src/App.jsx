@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import Navbar from "./navbar";
 import "./App.css";
 
 export default function App() {
@@ -99,29 +101,7 @@ export default function App() {
   return (
     <div className="app">
 
-      {/* NAVBAR */}
-      <header className="navbar">
-        <div className="nav-left">
-          <img src="/logo.png" alt="Medizap" />
-        </div>
-
-        <div className="nav-center">
-          <a href="#how-it-works">How It Works</a>
-         <a href="#features">Features</a>
-         <a href="#about">About Us</a>
-         <a href="#updates">Blog</a>
-         <a href="#partners">For Partners</a>
-        </div>
-
-        <div className="nav-right">
-          <button
-  className="btn-primary"
-  onClick={() => setShowWaitlist(true)}
->
-  Join Waitlist →
-</button>
-        </div>
-      </header>
+      <Navbar setShowWaitlist={setShowWaitlist} />
 
       {/* HERO */}
       <section className="hero">
@@ -745,9 +725,15 @@ emailjs.send(
         </div>
       </div>
 
-      <button className="partner-btn">
-        Become a Partner →
-      </button>
+      <a
+  href="https://docs.google.com/forms/d/e/1FAIpQLSe6Itvl6TB-HVmUWhdYxsG-v83IAgFt8FlBynorwWl-yCmuFw/viewform?usp=publish-editor"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="partner-btn">
+    Become a Partner →
+  </button>
+</a>
 
     </div>
 
@@ -828,38 +814,84 @@ emailjs.send(
   <div className="waitlist-card">
 
     <h3>Join the Waitlist</h3>
+<form
+  className="waitlist-form"
+  onSubmit={(e) => {
+    e.preventDefault();
 
-    <form>
+    emailjs.send(
+      "service_r7to9nb",
+      "template_vpxm5gi",
+      {
+        email: e.target.email.value,
+        phone: e.target.phone.value,
+        pincode: e.target.pincode.value,
+      },
+      "rT5l30wKW_zmITwT4"
+    );
 
-      <div className="input-group">
-        <label>EMAIL ADDRESS</label>
-        <input
-          type="email"
-          placeholder="your.email@example.com"
-        />
-      </div>
+    emailjs.send(
+      "service_r7to9nb",
+      "template_c1tjidh",
+      {
+        email: e.target.email.value,
+        name: "MediZap User",
+      },
+      "rT5l30wKW_zmITwT4"
+    )
 
-      <div className="input-group">
-        <label>PHONE NUMBER</label>
-        <input
-          type="text"
-          placeholder="+91 98765 43210"
-        />
-      </div>
+   .then(() => {
+  setShowSuccess(true);
 
-      <div className="input-group">
-        <label>PINCODE</label>
-        <input
-          type="text"
-          placeholder="560001"
-        />
-      </div>
+  setTimeout(() => {
+    setShowSuccess(false);
+  }, 3000);
+})
 
-      <button type="submit" className="waitlist-btn">
-        Join Waitlist →
-      </button>
+.catch(() => {
+  console.log("Something went wrong");
+});
+  }}
+>
 
-    </form>
+  <div className="input-group">
+    <label>EMAIL ADDRESS</label>
+
+    <input
+      type="email"
+      name="email"
+      placeholder="your.email@example.com"
+      required
+    />
+  </div>
+
+  <div className="input-group">
+    <label>PHONE NUMBER</label>
+
+    <input
+      type="text"
+      name="phone"
+      placeholder="+91 98765 43210"
+      required
+    />
+  </div>
+
+  <div className="input-group">
+    <label>PINCODE</label>
+
+    <input
+      type="text"
+      name="pincode"
+      placeholder="560001"
+      required
+    />
+  </div>
+
+  <button type="submit" className="waitlist-btn">
+    Join Waitlist →
+  </button>
+
+</form>
 
   </div>
 
@@ -934,9 +966,9 @@ emailjs.send(
     <p>© 2026 MediZap. All rights reserved.</p>
 
     <div className="footer-policy-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Refund Policy</a>
+      <Link to="/privacy-policy">Privacy Policy</Link>
+      <Link to="/terms">Terms of Service</Link>
+      <Link to="/refund-policy">Refund Policy</Link>
     </div>
 
   </div>
