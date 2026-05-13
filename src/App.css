@@ -1950,3 +1950,473 @@ padding: 36px;
   line-height: 1.9;
   font-size: 17px;
 }
+
+.menu-toggle{
+  display: none;
+}
+
+
+/* ================= MOBILE FIXES ================= */
+
+@media (max-width: 768px) {
+
+  .app{
+    padding: 20px 16px;
+    overflow-x: hidden;
+  }
+
+  /* NAVBAR */
+  
+  .nav-center{
+  display: none !important;
+}
+
+.nav-center.active{
+  position: absolute;
+
+  top: 72px;
+  left: 12px;
+  right: 12px;
+
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  background: rgba(6, 18, 34, 0.95);
+
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-right{
+  display: none;
+}
+
+.menu-toggle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  background: rgba(255,255,255,0.04);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.navbar{
+  position: sticky;
+  top: 8px;
+  z-index: 9999;
+
+  width: calc(100% - 8px);
+  margin: 0 auto 16px;
+
+  padding: 14px 16px;
+
+  border-radius: 18px;
+
+  background: rgba(6, 18, 34, 0.55);
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left img{
+  height: 34px;
+  display: block;
+}
+
+.nav-center{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 12px;
+}
+
+.nav-center a{
+  font-size: 11px;
+}
+
+.btn-primary{
+  width: auto;
+  padding: 8px 16px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+  /* HERO */
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  gap: 24px;
+  padding-top: 10px;
+}
+
+.hero > *{
+  width: 100%;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: none !important;
+
+  text-align: center;
+
+  padding: 0 20px;
+}
+
+.left h1{
+  font-size: 18px;
+  line-height: 1.25;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.left p{
+  width: 100%;
+  max-width: 100%;
+
+  text-align: center;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  margin: 0 auto;
+}
+
+.right{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.badge{
+  font-size: 11px;
+}
+
+  /* INPUT */
+
+  .input-box{
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .input-box input,
+  .input-box button{
+    width: 100%;
+  }
+
+  /* STATS */
+
+  .stats{
+    margin-top: 20px;
+    gap: 14px;
+    justify-content: space-between;
+  }
+
+  .stats h3{
+    font-size: 18px;
+  }
+
+  .stats p{
+    font-size: 10px;
+  }
+
+  /* SPHERE */
+
+  .sphere{
+    width: 280px;
+    height: 280px;
+  }
+
+  .sphere canvas{
+    width: 280px !important;
+    height: 280px !important;
+  }
+
+  /* TITLES */
+
+  .problem-section h2,
+  .how-section h2,
+  .benefits-section h2,
+  .updates-title,
+  .partner-header h2,
+  .waitlist-left h2,
+  .about-right h2{
+    font-size: 38px !important;
+    line-height: 1.15;
+  }
+
+  /* CARDS */
+
+  .problem-cards,
+  .benefits-grid,
+  .updates-grid,
+  .partner-grid,
+  .footer-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .problem-card,
+  .benefit-card,
+  .partner-main-card,
+  .partner-info-card,
+  .waitlist-card{
+    width: 100%;
+    min-height: auto;
+  }
+
+  .problem-card,
+  .benefit-card{
+    padding: 20px;
+  }
+
+  /* STEPS */
+
+  .step{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .step-number{
+    font-size: 34px;
+  }
+
+  /* ABOUT */
+
+  .launch-section h2{
+  font-size: 20px !important;
+  line-height: 1.3;
+  max-width: 240px;
+}
+
+.launch-section p{
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.launch-section{
+  overflow: hidden;
+}
+
+.launch-section,
+.launch-content,
+.launch-left,
+.launch-right{
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+
+  flex: none !important;
+}
+
+.launch-section{
+  overflow: hidden;
+  padding: 50px 24px;
+}
+
+.launch-section h2{
+  font-size: 42px !important;
+  line-height: 1.15 !important;
+
+  max-width: 320px;
+}
+
+.launch-section p{
+  font-size: 16px;
+  line-height: 1.8;
+
+  max-width: 100%;
+}
+
+  .about-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 40px;
+
+  padding: 80px 20px;
+}
+
+.about-left,
+.about-right{
+  width: 100%;
+  max-width: 100%;
+}
+
+.about-right{
+  text-align: left;
+}
+
+.about-right h2{
+font-size: 34px !important;
+line-height: 1.2 !important;
+max-width: 340px;
+}
+
+.about-right p{
+  font-size: 15px;
+  line-height: 1.8;
+
+  max-width: 100%;
+}
+
+.about-image-card{
+  width: 100%;
+}
+
+.about-image-card img{
+  width: 100%;
+  height: auto;
+}
+
+  /* PARTNER */
+
+  .partner-section{
+  padding: 60px 20px;
+}
+
+  .partner-info-card{
+    grid-template-columns: 1fr;
+  }
+
+  /* WAITLIST */
+
+  .waitlist-section{
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+  .waitlist-card{
+    padding: 30px 24px;
+  }
+
+  .waitlist-card h3{
+    font-size: 34px;
+  }
+
+  .waitlist-left p{
+    font-size: 18px;
+  }
+
+  .benefit-item p{
+    font-size: 18px;
+  }
+
+  /* FOOTER */
+
+  .footer-section{
+    padding: 80px 20px 40px;
+  }
+
+  .footer-bottom{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-policy-links{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* POLICY PAGES */
+
+  .policy-card{
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px 20px;
+  }
+
+  .policy-card h1{
+    font-size: 40px;
+  }
+
+  .policy-card h2{
+    font-size: 24px;
+  }
+
+  padding and sppacing
+
+  .problem-section{
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+.how-section{
+  padding-top: 40px !important;
+}
+
+.benefits-section{
+  padding-top: 40px !important;
+}
+
+.how-section{
+  padding-bottom: 40px !important;
+}
+
+.updates-title{
+  margin-bottom: 20px !important;
+}
+
+.updates-section .section-header{
+  margin-bottom: 30px !important;
+}
+
+.updates-grid{
+  margin-top: 20px !important;
+}
+
+.updates-section{
+  padding: 50px 20px !important;
+}
+
+.updates-section p{
+  max-width: 260px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+}
+
