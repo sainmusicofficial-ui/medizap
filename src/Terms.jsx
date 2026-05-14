@@ -1,4 +1,5 @@
-import Navbar from "../navbar";
+import Navbar from "./navbar";
+import Footer from "./Footer";
 
 export default function Terms() {
   return (
@@ -56,6 +57,8 @@ export default function Terms() {
         </p>
 
       </div>
+
+      <Footer/>
 
     </div>
   );

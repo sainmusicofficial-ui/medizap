@@ -1,4 +1,5 @@
 import Navbar from "./navbar";
+import Footer from "./Footer";
 
 export default function RefundPolicy() {
   return (
@@ -68,6 +69,8 @@ export default function RefundPolicy() {
         </p>
 
       </div>
+
+<Footer/>
 
     </div>
   );

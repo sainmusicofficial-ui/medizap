@@ -18,6 +18,7 @@ export default function Navbar({ setShowWaitlist = () => {} }) {
         <Link to="/#about">About Us</Link>
         <Link to="/#updates">Blog</Link>
         <Link to="/#partners">For Partners</Link>
+        <Link to="/careers">Careers</Link>
       </div>
 
 <button
